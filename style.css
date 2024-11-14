@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mukta', sans-serif;
+}
+
+.email-top a{
+   color: #FEFEFEFE;
+   display: flex;
+   align-items: center;
+   margin-top: 10px;
+   font-size: larger;
+   justify-content: space-around;
+}
+
+nav {
+    color: #FEFEFEFE;
+    display: flex;
+    align-items: center;
+    height: 20vh;
+    padding: 100px;
+    justify-content: space-around;
+    
+}
+
+nav a {
+    font-size: 18px;
+    color: #FEFEFEFE;
+    cursor: pointer;
+    text-decoration: none;
+    
+}
+
+h1 {
+    color: hsla(53, 27%, 87%, 0.996);
+    text-align: -webkit-center;
+
+}
+
+body {
+    height: 100vh;
+    background-color: black;
+}
+
+.headImg {
+    height: 120px;
+    margin: 20px;
+}
+
+
+.caixa-mae {
+    display: flex;
+    align-items: center;
+    padding: 100px;
+    justify-content: space-around;
+    color: #FEFEFEFE;
+    
+} 
+
+.caixa-mae .text-inicial{
+    color: hsla(53, 27%, 87%, 0.996);
+    font-size: 25px;
+    text-align: -webkit-center;
+    margin-top: 30px;
+}
+
+.caixa-mae .text-who {
+    font-size: 18px;
+}
+
+.logo-portaria {
+    height: 200px;
+    margin-left: 23%;
+    margin-top: 10px;
+}
+
+.caixa-mae button{
+    background-color: hsl(34, 84%, 40%);
+    color: white;
+    border-radius: 3px;
+    border: none;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 42%;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.whatsapp img {
+    height: 60px;
+}
+
+.instagram {
+    position: fixed;
+    bottom: 75px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.instagram img {
+    height: 60px;
+}
+
+
+
+
+.formulario {   
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 30%;
+    left: -320px;
+    padding: 20px;
+    border-radius: 5px;
+    gap: 15px;
+    transition: left 1s ease-in-out;
+
+}
