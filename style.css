@@ -40,7 +40,7 @@ h1 {
 
 body {
     height: 100vh;
-    background-color: black;
+    background-color: rgb(16, 22, 39);
 }
 
 .headImg {
@@ -76,7 +76,7 @@ body {
 }
 
 .caixa-mae button{
-    background-color: hsl(34, 84%, 40%);
+    background-color: rgb(231, 173, 73);
     color: white;
     border-radius: 3px;
     border: none;
@@ -110,6 +110,21 @@ body {
     height: 60px;
 }
 
+.caixa-video {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+
+   }
+
+.video {
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    top: 0;
+}
 
 
 
