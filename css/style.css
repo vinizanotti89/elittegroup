@@ -12,6 +12,7 @@
    margin-top: 10px;
    font-size: larger;
    justify-content: space-around;
+   text-decoration: none;
 }
 
 nav {
@@ -21,7 +22,7 @@ nav {
     height: 20vh;
     padding: 100px;
     justify-content: space-around;
-    
+    text-decoration: none;
 }
 
 nav a {
@@ -88,18 +89,18 @@ body {
     font-weight: bold;
     margin-top: 20px;
     margin-left: 42%;
+    text-decoration: none;
 }
 
 button:hover {
     background: linear-gradient(0deg, rgb(155, 160, 124) 0%, rgb(143, 161, 222) 100%);
-    font-size: 18px;
     transition: 0.5s ease-in-out;
     color: rgb(16, 22, 39)
 }
 
 .whatsapp {
     position: fixed;
-    bottom: 230px;
+    bottom: 15px;
     right: 15px;
     cursor: pointer;
 }
@@ -110,7 +111,7 @@ button:hover {
 
 .instagram {
     position: fixed;
-    bottom: 300px;
+    bottom: 75px;
     right: 15px;
     cursor: pointer;
 }
@@ -145,24 +146,42 @@ button:hover {
 
 a:hover {
     background: linear-gradient(0deg, rgba(22,25,22,1) 0%, rgb(231, 173, 73) 100%);
-    font-size: 24px;
     transition: 0.5s ease-in-out;
     text-decoration: none;
 }
 
-.formulario- {   
-    background-color: rgb(231, 173, 73);
+#close-form {
+    position: absolute; /* Posicionamento absoluto dentro da .formulario- */
+    top: 10px; /* Distância do topo */
+    right: 10px; /* Distância da borda direita */
+    background-color: #ff0000; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 5px 10px; /* Tamanho do botão */
+    cursor: pointer; /* Mostra a mãozinha ao passar o mouse */
+    border-radius: 5px; /* Bordas arredondadas */
+    z-index: 10; /* Garante que o botão fique acima do conteúdo do formulário */
+}
+
+#close-form:hover {
+    background-color: #d10000; /* Alteração de cor ao passar o mouse */
+}
+
+.formulario- {
+    background-color: rgb(231, 173, 73); /* Cor de fundo do formulário */
     display: flex;
     flex-direction: column;
     position: fixed;
     top: 30%;
-    left: -360px;
+    left: -400px;
     padding: 20px;
     border-radius: 5px;
     gap: 15px;
     transition: left 1.5s ease-in-out;
-
+    z-index: 5; /* Para garantir que o formulário não fique sobre o botão */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar mais destaque ao formulário */
 }
+
 
 .nossos-servicos {
     color: hsla(53, 27%, 87%, 0.996);
@@ -178,13 +197,14 @@ a:hover {
     height: 100vh;
     background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
     transition: left 1s ease-in-out;
+    z-index: 4;
 }
 
 /* Controle do carrossel */
 #carouselExampleControls {
     position: relative;
-    width: 100%;
-    padding-left: 20px;
+    width: 60%;
+    padding-left: 30px;
     padding-right: 20px;
 }
 
@@ -195,6 +215,7 @@ a:hover {
 .carousel-item.active {
     display: flex !important; /* Força os itens do carrossel a usar o display flex */
     transition: transform .6s ease !important; /* Garante que a transição funcione corretamente */
+    
 }
 
 /* Opcional: Ajuste para os itens do carrossel ficarem no layout flex (se necessário) */
@@ -202,14 +223,21 @@ a:hover {
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
+    align-items: center;
+    margin-left: 450px;
 }
+
 
 .carousel-item {
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    width: 100%; /* Garante que os itens ocupem 100% da largura do carrossel */
+    margin-right: 210px;
+   
+   
 }
+
+
 
 /* Ajuste o layout flex dentro do carrossel */
 .carousel-item .service-item {
@@ -218,7 +246,7 @@ a:hover {
 
 /* Ajuste para 4 itens por tela */
 .carousel-item:not(.active) .service-item {
-    flex: 1 1 calc(25% - 10px); /* Para 4 itens por linha */
+    flex: 1 1 calc(20% - 10px); /* Para 4 itens por linha */
 }
 
 /* Ocultar os itens da tela errada (isso já foi feito antes) */
@@ -234,23 +262,23 @@ a:hover {
 /* Ajuste do botão de serviços */
 .button-services {
     position: relative;
-    width: 100%;
+    width: 90%;
     transition: width 0.3s ease;
+    
 }
 
 /* Efeito hover para os botões */
 .button-services:hover {
-    width: 250px;
+    width: 100px;
     background: linear-gradient(0deg, rgb(52, 52, 198) 0%, rgb(231, 173, 73) 100%);
     transform: scale(1.1);
 }
 
 /* Ajuste das imagens dentro dos botões */
 .button-services img {
-    height: 200px;
-    width: 100%; /* Imagem ocupa toda a largura do botão */
+    height: 150px;
     object-fit: contain; /* Garante que a imagem não fique deformada */
-    transition: transform 0.3s ease;
+    transition: transform 0.1s ease;
 }
 
 /* Efeito de zoom nas imagens no hover */
@@ -268,6 +296,8 @@ a:hover {
     z-index: 1;
     opacity: 0.5;
     transition: opacity 0.3s ease;
+    margin-left: 400px;
+    margin-right: -300px;
 }
 
 .carousel-control-next:hover,
@@ -277,37 +307,52 @@ a:hover {
 
 /* Estilos do Popup */
 .popup {
-    display: none;  /* Esconde o popup por padrão */
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    right: 0;
+    bottom: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.5); /* Máscara de fundo */
 }
 
 .popup-content {
     background-color: white;
     padding: 20px;
-    border-radius: 10px;
-    max-width: 500px;
-    text-align: center;
-    font-size: 18px;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; /* Coloca o botão e o texto um abaixo do outro */
+    position: relative; /* Para o botão de fechar ser posicionado dentro do conteúdo */
 }
 
-.button-services {
-    position: relative;
-    width: 100%;
+#close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 10; /* Garante que o botão fique acima do conteúdo */
 }
 
-.button-services img {
-    height: 200px;
-    width: 100%;
-    object-fit: contain;
+#close-popup:hover {
+    background-color: #d10000;
 }
+
+#popup-text {
+    margin-top: 30px; /* Distância do texto para baixo, para que não fique colado no botão */
+}
+
+
+
+
 
 /* Responsividade para telas pequenas (2 itens por linha) */
 @media (max-width: 768px) {
