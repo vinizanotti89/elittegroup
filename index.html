@@ -12,17 +12,20 @@
     <title>GRUPO ELITTE VIGILÂNCIA</title>
 </head>
 <body>
-    <div class="mascara-formulario" onclick="hiddenmasc()"></div>
+    <div class="mascara-formulario" onclick="closePopup()"></div>
     <header class="email-top">
         <a href= mailto:grupoelitteseguranca.curitiba@gmail.com?subject=Orçamento> grupoelitteseguranca.curitiba@gmail.com</a>
     </header>
 
-      <!-- Popups (escondidos por padrão) -->
-      <div id="popup" class="popup" onclick="closePopup()">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <span id="popup-text"></span>
+      <!-- Popup (escondido inicialmente) -->
+        <div id="popup" class="popup" style="display: none;">
+            <div class="popup-content" onclick="event.stopPropagation()">
+                <button id="close-popup" class="close-btn">Fechar</button>
+                <span id="popup-text"></span>
+            </div>
         </div>
-    </div>
+
+        
 
     <nav id="home" class="start">
         <img src="./assets/logo.png" class="headImg">
@@ -65,7 +68,7 @@
         <video src="./assets/video-vigilancia.mp4" loop autoplay muted class="video"></video>
         <div class="mascara"></div>
     </div>
-        <form  id="formulario" class="formulario-" 
+        <!-- <form  id="formulario" class="formulario-" 
                 action="https://formcarry.com/s/Ljfc011-OEt"
                 method="POST"
                 enctype="multipart/form-data">
@@ -78,8 +81,28 @@
                 <input type="file" name="arquivo">
 
                 <button type="submit">SOLICITAR ORÇAMENTO</button>
-        </form>
+        </form> -->
 
+        <div class="formulario-"> <!-- Formulário inicialmente oculto -->
+            <button id="close-form" class="close-btn">Fechar</button>
+                 <form  id="formulario" class="formulario-" 
+                    action="https://formcarry.com/s/Ljfc011-OEt"
+                    method="POST"
+                    enctype="multipart/form-data">
+            
+                    <input placeholder="Nome" type="text" name="name">
+                    <input placeholder="Telefone" type="tel" name="tel">
+                    <input placeholder="EMAIL" type="email" name="email">
+                    <textarea placeholder="Diga qual a sua necessidade atual"  name="contato"></textarea>
+                    <label>Envie seu Arquivo Se preferir <br> <label class="menor-form">PDF OU IMAGEM</label></label>
+                    <input type="file" name="arquivo">
+
+                    <button type="submit">SOLICITAR ORÇAMENTO</button>
+                </form>
+          </div>
+          
+          <div class="mascara-formulario" style="visibility: hidden;"></div> <!-- Máscara -->
+          
 
         <h2 id="servicos" class="nossos-servicos"><b>NOSSOS SERVIÇOS</b></h2>
 
