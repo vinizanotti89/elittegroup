@@ -1,37 +1,27 @@
 const form = document.querySelector(".formulario-")
 const masc = document.querySelector(".mascara-formulario")
+const closeButtonForm = document.getElementById("close-form");
 
+if (closeButtonForm) {
+    closeButtonForm.addEventListener("click", function() {
+        hiddenmasc(); // Função já criada para esconder o formulário
+    });
+}
 
 function showForm() {
-    form.style.left = "50%"
+    form.style.left = "63%"
     form.style.transform = "translateX(-50%)"
     masc.style.visibility = "visible"
 }
 
 function hiddenmasc() {
     masc.style.visibility = "hidden"
-    form.style.left = "-320px"
+    form.style.left = "-400px"
 }   
 
 
-// // Seleciona todos os botões com a classe .button-services
-// const buttons = document.querySelectorAll('.button-services');
 
-// // Adiciona o evento de clique a cada botão
-// buttons.forEach(button => {
-//     button.addEventListener('click', function() {
-//         // Obtém o ID do parágrafo correspondente ao botão
-//         const targetId = button.getAttribute('data-target');
-//         const targetText = document.getElementById(targetId);
 
-//         // Alterna a visibilidade do parágrafo (texto)
-//         if (targetText.style.display === 'none' || targetText.style.display === '') {
-//             targetText.style.display = 'block';
-//         } else {
-//             targetText.style.display = 'none';
-//         }
-//     });
-// });
 
 // Inicializando o carrossel
 $('.carousel').carousel({
@@ -79,13 +69,22 @@ function closePopup() {
     popup.style.display = "none";
 }
 
-// Seleciona todos os botões de serviço
-const buttons = document.querySelectorAll('.button-services');
 
-// Adiciona o evento de clique a cada botão
-buttons.forEach(button => {
-    button.addEventListener('click', function() {
-        const serviceName = button.getAttribute('data-target');
-        openPopup(serviceName);
-    });
-});
+ // Seleciona todos os botões de serviço
+ const buttons = document.querySelectorAll('.button-services');
+
+ // Adiciona o evento de clique a cada botão
+ buttons.forEach(button => {
+     button.addEventListener('click', function() {
+         const serviceName = button.getAttribute('data-target');
+         openPopup(serviceName);
+     });
+ });
+
+ // Adiciona evento ao botão de fechar do popup
+ const closeButtonPopup = document.getElementById("close-popup");
+ if (closeButtonPopup) {
+     closeButtonPopup.addEventListener("click", closePopup);
+ }
+
+
