@@ -145,6 +145,7 @@ a:hover {
     background: linear-gradient(0deg, rgba(22,25,22,1) 0%, rgb(231, 173, 73) 100%);
     font-size: 24px;
     transition: 0.5s ease-in-out;
+    text-decoration: none;
 }
 
 .formulario- {   
