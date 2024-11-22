@@ -136,6 +136,10 @@ button:hover {
     top: 0;
 }
 
+.video-mobile {
+    display: none;
+}
+
 .mascara {
     width: 100%;
     height: 100%;
@@ -152,12 +156,12 @@ a:hover {
 
 #close-form {
     position: absolute; /* Posicionamento absoluto dentro da .formulario- */
-    top: 10px; /* Distância do topo */
-    right: 10px; /* Distância da borda direita */
+    top: -32px; /* Distância do topo */
+    right: -20px; /* Distância da borda direita */
     background-color: #ff0000; /* Cor de fundo do botão */
     color: white; /* Cor do texto */
     border: none; /* Sem borda */
-    padding: 5px 10px; /* Tamanho do botão */
+    padding: 10px 15px; /* Tamanho do botão */
     cursor: pointer; /* Mostra a mãozinha ao passar o mouse */
     border-radius: 5px; /* Bordas arredondadas */
     z-index: 10; /* Garante que o botão fique acima do conteúdo do formulário */
@@ -173,15 +177,20 @@ a:hover {
     flex-direction: column;
     position: fixed;
     top: 30%;
-    left: -400px;
+    /* left: -400px; */
+    left: 50%; /* Centraliza o formulário em relação ao eixo horizontal */
+    transform: translateX(-50%); /* Compensa a largura do formulário para centralizar corretamente */
     padding: 20px;
     border-radius: 5px;
     gap: 15px;
-    transition: left 1.5s ease-in-out;
+    transition: left 1.0s ease-in-out;
     z-index: 5; /* Para garantir que o formulário não fique sobre o botão */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar mais destaque ao formulário */
 }
 
+.formulario- {
+    left: -10%;
+}
 
 .nossos-servicos {
     color: hsla(53, 27%, 87%, 0.996);
@@ -202,6 +211,7 @@ a:hover {
 
 /* Controle do carrossel */
 #carouselExampleControls {
+    display: block;
     position: relative;
     width: 60%;
     padding-left: 30px;
@@ -233,8 +243,6 @@ a:hover {
     justify-content: space-between;
     gap: 10px;
     margin-right: 210px;
-   
-   
 }
 
 
@@ -353,17 +361,303 @@ a:hover {
 
 
 
+/* Responsividade para telas largas */
+@media (1680px <= width <= 1919px) {
+    .carousel-control-next,
+    .carousel-control-prev {
+        margin-left: 400px;
+        margin-right: -400px;
+    }
 
-/* Responsividade para telas pequenas (2 itens por linha) */
-@media (max-width: 768px) {
+    #close-form {
+        top: -32px; /* Distância do topo */
+        right: -30px; /* Distância da borda direita */
+    }
+
+    
+}
+
+/* Responsividade para telas largas */
+@media (1440px <= width <= 1679px) {
+    .carousel-control-next,
+    .carousel-control-prev {
+        margin-left: 200px;
+        margin-right: -350px;
+    }
+
+    .carousel-inner {
+        margin-left: 230px;
+    }
+
+    .carousel-item {  
+      margin-right: 150px; 
+    }
+
+    #close-form {
+        top: -32px; /* Distância do topo */
+        right: -22px; /* Distância da borda direita */
+    }
+
+    
+}
+
+/* Responsividade para telas menores */
+@media (1280px <= width <= 1439px) {
+    .carousel-control-next,
+    .carousel-control-prev {
+        margin-left: 150px;
+        margin-right: -210px;
+    }
+
+    .carousel-inner {
+        margin-left: 180px;
+    }
+
+    .carousel-item {  
+      margin-right: 150px; 
+    }
+
+    .button-services img {
+        height: 120px;
+    }
+
+    #close-form {
+        top: -32px; /* Distância do topo */
+        right: -20px; /* Distância da borda direita */
+    }
+
+}
+
+/* Responsividade para telas menores */
+@media (1024px <= width <= 1279px) {
+
+    h1 {
+       font-size: 27px;
+    }
+
+    .headImg {
+        height: 80px;
+    }
+
+    .logo-portaria {
+        height: 180px;
+        margin-left: 30%;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        margin-left: 160px;
+        margin-right: -210px;
+    }
+
+    .carousel-inner {
+        margin-left: 180px;
+    }
+
+    .carousel-item {  
+      margin-right: 150px; 
+    }
+
+    .button-services img {
+        height: 90px;
+    }
+
+    .formulario- {
+        top: 10%;
+        
+    }
+
+    #close-form {
+        top: -40px; /* Distância do topo */
+        right: -20px; /* Distância da borda direita */
+    }
+
+}
+
+
+/* Responsividade para tablets maiores */
+@media (820px <= width <= 1023px) {
+
+    h1 {
+        font-size: 22px;
+     }
+ 
+     .headImg {
+         height: 60px;
+     }
+ 
+     .logo-portaria {
+         height: 150px;
+         margin-left: 30%;
+     }
+ 
+     .carousel-control-next,
+     .carousel-control-prev {
+         margin-left: 160px;
+         margin-right: -210px;
+     }
+ 
+     .carousel-inner {
+         margin-left: 180px;
+     }
+ 
+     .carousel-item {  
+       margin-right: 100px; 
+     }
+ 
+     .button-services img {
+         height: 75px;
+     }
+ 
+     .formulario- {
+         top: 30%;
+        
+     }
+ 
+     #close-form {
+         top: -32px; /* Distância do topo */
+         right: -34px; /* Distância da borda direita */
+     }
+
+}
+
+/* Responsividade para tablets maiores */
+@media (768px <= width <= 819px) {
+
+    h1 {
+        font-size: 22px;
+     }
+ 
+     .headImg {
+         height: 60px;
+     }
+ 
+     .logo-portaria {
+         height: 150px;
+         margin-left: 30%;
+     }
+ 
+     .carousel-control-next,
+     .carousel-control-prev {
+         margin-left: 160px;
+         margin-right: -210px;
+     }
+ 
+     .carousel-inner {
+         margin-left: 160px;
+     }
+ 
+     .carousel-item {  
+       margin-right: 95px; 
+     }
+ 
+     .button-services img {
+         height: 70px;
+     }
+ 
+     .formulario- {
+         top: 30%;
+        
+     }
+ 
+     #close-form {
+         top: -32px; /* Distância do topo */
+         right: -34px; /* Distância da borda direita */
+     }
+
+     .caixa-mae button {
+        margin-left: 30%;
+     }
+
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 766px) {
+
+    nav {
+        height: 20vh;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: small;
+    }
+ 
+    .headImg {
+        margin: 10px;
+        height: 70px;
+    }
+ 
+    .logo-portaria {
+        height: 120px;
+        margin-left: 10%;
+    }
+
+    .caixa-mae .text-inicial {
+        font-size: small;
+    }
+
+    .caixa-mae .text-who {
+        font-size: smaller;
+    }
+    
+    /* Esconde o carrossel em telas pequenas */
+    #carouselExampleControls {
+        display: none;
+    }
+
+     /* Exibe os itens de serviço como blocos flex */
+     .service-items-container {
+        display: flex !important;
+        flex-wrap: wrap; /* Permite que os itens se quebrem para a linha seguinte, se necessário */
+        justify-content: space-between;
+        height: auto;
+        overflow: auto;
+    }
+
     .service-item {
-        flex: 1 1 calc(50% - 10px); /* Exibe 2 itens por linha em telas pequenas */
+        width: calc(33.33% - 10px); /* 3 itens por linha, com margem entre eles */
+        margin-bottom: 20px;
+        text-align: center;
+        display: block !important;
+    }
+
+    .service-item img {
+        width: 100%; /* Ajusta a imagem ao tamanho do contêiner */
+        height: auto;
+    }
+
+    /* Ajusta o espaçamento entre os itens */
+    .service-item:nth-child(3n) {
+        margin-right: 0; /* Remove a margem à direita do 3º item */
+    }
+
+    .service-item:nth-child(3n+1) {
+        clear: both; /* Faz com que o primeiro item de cada nova linha comece no topo */
+    }
+
+    .button-services {
+        width: 100%;
+    }
+
+    .video {
+        display: none;
+    }
+
+    .video-mobile {
+        display: block;
+    }
+
+    /* Esconde o formulário inicialmente */
+    .formulario- {
+        left: -100%; /* Inicialmente escondido */
+    }
+
+    #close-form {
+        top: -32px; /* Distância do topo */
+        right: -34px; /* Distância da borda direita */
     }
 }
 
-/* Responsividade para telas muito pequenas (1 item por linha) */
-@media (max-width: 480px) {
-    .service-item {
-        flex: 1 1 100%; /* Exibe 1 item por linha em telas muito pequenas */
-    }
-}
+
+

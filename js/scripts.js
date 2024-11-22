@@ -1,41 +1,93 @@
-const form = document.querySelector(".formulario-")
-const masc = document.querySelector(".mascara-formulario")
+// Trás a tela do formulário oculta por padrão e quando chamado aparece
+
+
+const form = document.querySelector(".formulario-");
+const masc = document.querySelector(".mascara-formulario");
 const closeButtonForm = document.getElementById("close-form");
 
 if (closeButtonForm) {
     closeButtonForm.addEventListener("click", function() {
-        hiddenmasc(); // Função já criada para esconder o formulário
+        hiddenmasc(); // Função para esconder o formulário
     });
 }
 
 function showForm() {
-    form.style.left = "63%"
-    form.style.transform = "translateX(-50%)"
-    masc.style.visibility = "visible"
+    masc.style.visibility = "visible"; // Mostra a máscara
+    form.style.transition = "left 1.5s ease-in-out"; // Anima a entrada
+    form.style.left = "50%"; // Centraliza o formulário horizontalmente
+    form.style.transform = "translateX(-50%)"; // Centraliza efetivamente, considerando a largura
 }
 
 function hiddenmasc() {
-    masc.style.visibility = "hidden"
-    form.style.left = "-400px"
-}   
+    masc.style.visibility = "hidden"; // Esconde a máscara
+    form.style.transition = "none"; // Remove a transição
+    form.style.left = "-100%"; // Move o formulário para fora da tela (escondido)
+}
 
-
-
-
-
-// Inicializando o carrossel
-$('.carousel').carousel({
-    interval: 5000,  // Tempo de transição automática (5 segundos)
+// Garantir que o formulário comece oculto ao carregar a página
+window.addEventListener('load', () => {
+    form.style.left = "-100%";  // Começa fora da tela
 });
 
-// Função de navegação manual
-$('.carousel-control-prev').click(function() {
-    $('.carousel').carousel('prev');
+
+
+
+// Função para inicializar ou destruir o carrossel com base no tamanho da tela
+function adjustCarousel() {
+    console.log("Carregado adjustCarousel")
+    const width = $(window).width();
+
+    // Verifica se a largura da tela é maior que 766px (telas grandes)
+    if (width > 766) {
+        // Inicializando o carrossel para telas grandes
+        if (!$('.carousel').hasClass('initialized')) {
+            $('.carousel').carousel({
+                interval: 5000,  // Tempo de transição automática (5 segundos)
+            }).addClass('initialized');
+        }
+
+        // Função de navegação manual
+        $('.carousel-control-prev').click(function() {
+            $('.carousel').carousel('prev');
+        });
+
+        $('.carousel-control-next').click(function() {
+            $('.carousel').carousel('next');
+        });
+        
+        // Garante que o carrossel seja visível
+        $('#carouselExampleControls').show();
+
+    } else {
+        // Destrói o carrossel e o oculta em telas pequenas
+        $('.carousel').carousel('dispose').removeClass('initialized');
+        $('#carouselExampleControls').hide();  // Esconde o carrossel completamente em telas pequenas
+       console.log("Carousel foi escondido")
+        //Move os itens de serviço para o container flex
+        $('.carousel-inner .service-item').appendTo('.service-items-container');
+        console.log("Itens movidos para o Container Flex")
+        //Garante que os itens sejam mostrados em 3x3
+        $('.service-items-container').css('display', 'flex');
+        $('.service-items-container .service-item').css('display', 'block');
+        console.log("Parametrização CSS para itens 3x3")
+        // Garante que os itens de serviço sejam exibidos como blocos
+        $('.service-item').show();  // Exibe todos os itens de serviço
+        console.log("CSS sendo exibido em 3x3")
+    }
+}
+
+// Chama a função de ajuste do carrossel na inicialização da página
+$(document).ready(function() {
+    console.log("Carousel foi chamado")
+    adjustCarousel(); // Ajuste no carregamento da página
+
+    // Ajusta o carrossel sempre que a tela for redimensionada
+    $(window).resize(function() {
+    console.log("Carousel foi redimensionado")
+        adjustCarousel();
+    });
 });
 
-$('.carousel-control-next').click(function() {
-    $('.carousel').carousel('next');
-});
 
 
 // Função para abrir o popup com as informações
@@ -53,7 +105,7 @@ function openPopup(serviceName) {
         "rondas-ostensivas": "Informações de Rondas Ostensivas do Gordinho FODA",
         "atendimento-24h": "Informações e atendimento 24-horas",
         "respostas-rapidas": "Informações de respostas altamente rápidas da galera de plantão",
-        "servico-personalizado": "Não enccontrou o que procurava? Nós personalizamos um serviço especicamente para sua necessidade, montamos um projeto de acordo com a necessiddade de cada cliente, trazendo sempre uma solução de confiança com um preço justo de verdade!"
+        "servico-personalizado": "Não encontrou o que procurava? Nós personalizamos um serviço especificamente para sua necessidade."
     };
 
     // Definir o texto do popup
@@ -88,3 +140,45 @@ function closePopup() {
  }
 
 
+
+
+
+// Função para alternar o vídeo
+function alternarVideos(videoElement) {
+    const fontes = videoElement.getElementsByTagName('source');
+    let currentSourceIndex = -1;
+
+    // Encontrar o índice da fonte atual
+    for (let i = 0; i < fontes.length; i++) {
+        if (fontes[i].src === videoElement.currentSrc) {
+            currentSourceIndex = i;
+            break;
+        }
+    }
+
+    // Se o índice da fonte atual for encontrado, altere para a próxima
+    if (currentSourceIndex >= 0) {
+        // Alterna para o próximo vídeo
+        const nextSourceIndex = (currentSourceIndex + 1) % fontes.length; // Alterna para o próximo vídeo
+
+        // Atualiza o src do vídeo diretamente (sem mexer nas fontes)
+        videoElement.src = fontes[nextSourceIndex].src;
+
+        // Recarrega o vídeo e começa a reprodução
+        videoElement.load();   // Força o carregamento da nova fonte
+        videoElement.play();   // Reproduz o próximo vídeo
+    }
+}
+
+// Adicionar ouvintes de evento aos vídeos
+document.querySelectorAll('.video-mobile').forEach((video) => {
+    video.addEventListener('ended', () => {
+        alternarVideos(video);
+    });
+});
+
+document.querySelectorAll('.video').forEach((video) => {
+    video.addEventListener('ended', () => {
+        alternarVideos(video);
+    });
+});
