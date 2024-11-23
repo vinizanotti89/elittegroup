@@ -362,7 +362,7 @@ a:hover {
 
 
 /* Responsividade para telas largas */
-@media (1680px <= width <= 1919px) {
+@media (max-width: 1919px) and (min-width: 1618px){
     .carousel-control-next,
     .carousel-control-prev {
         margin-left: 400px;
@@ -370,15 +370,15 @@ a:hover {
     }
 
     #close-form {
-        top: -32px; /* Distância do topo */
-        right: -30px; /* Distância da borda direita */
+        top: -32px; 
+        right: -30px; 
     }
 
     
 }
 
 /* Responsividade para telas largas */
-@media (1440px <= width <= 1679px) {
+@media (max-width: 1679px) and (min-width: 1440px){
     .carousel-control-next,
     .carousel-control-prev {
         margin-left: 200px;
@@ -394,15 +394,15 @@ a:hover {
     }
 
     #close-form {
-        top: -32px; /* Distância do topo */
-        right: -22px; /* Distância da borda direita */
+        top: -32px; 
+        right: -22px; 
     }
 
     
 }
 
 /* Responsividade para telas menores */
-@media (1280px <= width <= 1439px) {
+@media (max-width: 1439px) and (min-width: 1280px){
     .carousel-control-next,
     .carousel-control-prev {
         margin-left: 150px;
@@ -422,14 +422,14 @@ a:hover {
     }
 
     #close-form {
-        top: -32px; /* Distância do topo */
-        right: -20px; /* Distância da borda direita */
+        top: -32px; 
+        right: -20px; 
     }
 
 }
 
 /* Responsividade para telas menores */
-@media (1024px <= width <= 1279px) {
+@media (max-width: 1279px) and (min-width: 1024px){
 
     h1 {
        font-size: 27px;
@@ -468,15 +468,15 @@ a:hover {
     }
 
     #close-form {
-        top: -40px; /* Distância do topo */
-        right: -20px; /* Distância da borda direita */
+        top: -40px; 
+        right: -20px; 
     }
 
 }
 
 
 /* Responsividade para tablets maiores */
-@media (820px <= width <= 1023px) {
+@media (max-width: 1023px) and (min-width: 820px){
 
     h1 {
         font-size: 22px;
@@ -515,14 +515,14 @@ a:hover {
      }
  
      #close-form {
-         top: -32px; /* Distância do topo */
-         right: -34px; /* Distância da borda direita */
+         top: -32px; 
+         right: -34px; 
      }
 
 }
 
 /* Responsividade para tablets maiores */
-@media (768px <= width <= 819px) {
+@media (max-width: 819px) and (min-width: 768px){
 
     h1 {
         font-size: 22px;
@@ -561,8 +561,8 @@ a:hover {
      }
  
      #close-form {
-         top: -32px; /* Distância do topo */
-         right: -34px; /* Distância da borda direita */
+         top: -32px;
+         right: -34px; 
      }
 
      .caixa-mae button {
@@ -572,7 +572,7 @@ a:hover {
 }
 
 /* Responsividade para telas menores */
-@media (max-width: 766px) {
+@media (max-width: 766px) and (min-width: 684px) {
 
     nav {
         height: 20vh;
@@ -600,45 +600,25 @@ a:hover {
     .caixa-mae .text-who {
         font-size: smaller;
     }
+
+    .button-services img {
+        height: 60px;
+    }
     
-    /* Esconde o carrossel em telas pequenas */
-    #carouselExampleControls {
-        display: none;
-    }
+    .carousel-control-next,
+     .carousel-control-prev {
+         margin-left: 60px;
+         margin-right: -110px;
+     }
+ 
+     .carousel-inner {
+         margin-left: 60px;
+     }
+ 
+     .carousel-item {  
+       margin-right: 5px; 
+     }
 
-     /* Exibe os itens de serviço como blocos flex */
-     .service-items-container {
-        display: flex !important;
-        flex-wrap: wrap; /* Permite que os itens se quebrem para a linha seguinte, se necessário */
-        justify-content: space-between;
-        height: auto;
-        overflow: auto;
-    }
-
-    .service-item {
-        width: calc(33.33% - 10px); /* 3 itens por linha, com margem entre eles */
-        margin-bottom: 20px;
-        text-align: center;
-        display: block !important;
-    }
-
-    .service-item img {
-        width: 100%; /* Ajusta a imagem ao tamanho do contêiner */
-        height: auto;
-    }
-
-    /* Ajusta o espaçamento entre os itens */
-    .service-item:nth-child(3n) {
-        margin-right: 0; /* Remove a margem à direita do 3º item */
-    }
-
-    .service-item:nth-child(3n+1) {
-        clear: both; /* Faz com que o primeiro item de cada nova linha comece no topo */
-    }
-
-    .button-services {
-        width: 100%;
-    }
 
     .video {
         display: none;
@@ -648,16 +628,78 @@ a:hover {
         display: block;
     }
 
-    /* Esconde o formulário inicialmente */
-    .formulario- {
-        left: -100%; /* Inicialmente escondido */
-    }
 
     #close-form {
-        top: -32px; /* Distância do topo */
-        right: -34px; /* Distância da borda direita */
+        top: -32px; 
+        right: -34px; 
     }
 }
+
+
+
+@media (max-width: 683px) {
+
+    nav {
+        height: 20vh;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: small;
+    }
+ 
+    .headImg {
+        margin: 10px;
+        height: 70px;
+    }
+ 
+    .logo-portaria {
+        height: 120px;
+        margin-left: 10%;
+    }
+
+    .caixa-mae .text-inicial {
+        font-size: small;
+    }
+
+    .caixa-mae .text-who {
+        font-size: smaller;
+    }
+
+    .button-services img {
+        height: 60px;
+    }
+    
+    .carousel-control-next,
+     .carousel-control-prev {
+         margin-left: 60px;
+         margin-right: -110px;
+     }
+ 
+     .carousel-inner {
+         margin-left: 60px;
+     }
+ 
+     .carousel-item {  
+       margin-right: 5px; 
+     }
+
+
+    .video {
+        display: none;
+    }
+
+    .video-mobile {
+        display: block;
+    }
+
+
+    #close-form {
+        top: -32px; 
+        right: -34px; 
+    }
+}
+
 
 
 
