@@ -37,9 +37,6 @@ function adjustCarousel() {
     console.log("Carregado adjustCarousel")
     const width = $(window).width();
 
-    // Verifica se a largura da tela é maior que 766px (telas grandes)
-    if (width > 766) {
-        // Inicializando o carrossel para telas grandes
         if (!$('.carousel').hasClass('initialized')) {
             $('.carousel').carousel({
                 interval: 5000,  // Tempo de transição automática (5 segundos)
@@ -58,34 +55,13 @@ function adjustCarousel() {
         // Garante que o carrossel seja visível
         $('#carouselExampleControls').show();
 
-    } else {
-        // Destrói o carrossel e o oculta em telas pequenas
-        $('.carousel').carousel('dispose').removeClass('initialized');
-        $('#carouselExampleControls').hide();  // Esconde o carrossel completamente em telas pequenas
-       console.log("Carousel foi escondido")
-        //Move os itens de serviço para o container flex
-        $('.carousel-inner .service-item').appendTo('.service-items-container');
-        console.log("Itens movidos para o Container Flex")
-        //Garante que os itens sejam mostrados em 3x3
-        $('.service-items-container').css('display', 'flex');
-        $('.service-items-container .service-item').css('display', 'block');
-        console.log("Parametrização CSS para itens 3x3")
-        // Garante que os itens de serviço sejam exibidos como blocos
-        $('.service-item').show();  // Exibe todos os itens de serviço
-        console.log("CSS sendo exibido em 3x3")
     }
-}
 
 // Chama a função de ajuste do carrossel na inicialização da página
 $(document).ready(function() {
     console.log("Carousel foi chamado")
     adjustCarousel(); // Ajuste no carregamento da página
 
-    // Ajusta o carrossel sempre que a tela for redimensionada
-    $(window).resize(function() {
-    console.log("Carousel foi redimensionado")
-        adjustCarousel();
-    });
 });
 
 
@@ -182,3 +158,4 @@ document.querySelectorAll('.video').forEach((video) => {
         alternarVideos(video);
     });
 });
+
