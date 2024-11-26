@@ -1,6 +1,4 @@
 // Trás a tela do formulário oculta por padrão e quando chamado aparece
-
-
 const form = document.querySelector(".formulario-");
 const masc = document.querySelector(".mascara-formulario");
 const closeButtonForm = document.getElementById("close-form");
@@ -27,6 +25,14 @@ function hiddenmasc() {
 // Garantir que o formulário comece oculto ao carregar a página
 window.addEventListener('load', () => {
     form.style.left = "-100%";  // Começa fora da tela
+});
+
+// Função para fechar o formulário ao clicar fora
+masc.addEventListener('click', (e) => {
+    // Verifica se o clique foi fora do conteúdo do formulário
+    if (!form.contains(e.target)) {
+        hiddenmasc(); // Fecha o formulário
+    }
 });
 
 
@@ -67,54 +73,72 @@ $(document).ready(function() {
 
 
 // Função para abrir o popup com as informações
-function openPopup(serviceName) {
-    const popup = document.getElementById("popup");
-    const popupText = document.getElementById("popup-text");
+function openPopup(serviceId) {
+    console.log("Abrindo popup para o serviço:", serviceId); // Log para verificar o serviceId
 
-    // Mapeamento dos serviços com as informações
-    const services = {
-        "servico-portaria": "Informações sobre o serviço de Portaria 24h.",
-        "servico-vigias": "Informações sobre o serviço de Vigilantes.",
-        "controlador-acesso": "Informações do controlador de acesso",
-        "servico-monitoramento": "Informações sobre o serviço de Monitoramento de Alarmes.",
-        "servico-cftv": "Informações sobre o serviço de CFTV (câmeras).",
-        "rondas-ostensivas": "Informações de Rondas Ostensivas do Gordinho FODA",
-        "atendimento-24h": "Informações e atendimento 24-horas",
-        "respostas-rapidas": "Informações de respostas altamente rápidas da galera de plantão",
-        "servico-personalizado": "Não encontrou o que procurava? Nós personalizamos um serviço especificamente para sua necessidade."
-    };
+    // Função para esconder todos os textos de serviços
+    const allServices = document.querySelectorAll('.service-text');
+    console.log("Escondendo todos os textos de serviços...", allServices); // Log para ver os serviços que serão ocultados
+    
+    allServices.forEach(service => {
+        service.classList.add('hidden'); // Adiciona a classe hidden para esconder todos os textos
+    });
 
-    // Definir o texto do popup
-    popupText.textContent = services[serviceName];
+    // Mostra o texto do serviço no popup
+    const service = document.getElementById(serviceId);
+    if (service) {
+        console.log("Serviço encontrado:", service);
 
-    // Exibir o popup
-    popup.style.display = "flex";
+        // Exibe o conteúdo do serviço apenas no popup, não na página
+        const popup = document.getElementById("popup");
+        const popupText = document.getElementById("popup-text");
+
+        // Limpa o conteúdo anterior do popup (se houver)
+        popupText.innerHTML = ''; 
+
+        // Pega o conteúdo da descrição do serviço
+        const serviceContent = service.innerHTML;
+
+        // Adiciona o conteúdo do serviço no popup
+        popupText.innerHTML = serviceContent;
+
+        // Exibe o popup
+        popup.style.display = 'flex';
+        console.log("Popup exibido");
+    }
 }
-
+ 
 // Função para fechar o popup
 function closePopup() {
     const popup = document.getElementById("popup");
-    popup.style.display = "none";
+    popup.style.display = "none"; // Fecha o popup
 }
 
+// Adiciona o evento de clique a cada botão de serviço
+const buttons = document.querySelectorAll('.button-services');
+buttons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        const serviceId = e.target.closest('button').getAttribute('data-target');
+        openPopup(serviceId); // Chama a função passando o ID do serviço
+    });
+});
 
- // Seleciona todos os botões de serviço
- const buttons = document.querySelectorAll('.button-services');
+// Adiciona evento ao botão de fechar do popup
+const closeButtonPopup = document.getElementById("close-popup");
+if (closeButtonPopup) {
+    closeButtonPopup.addEventListener("click", closePopup); // Ao clicar no botão de fechar, chama a função closePopup
+}
 
- // Adiciona o evento de clique a cada botão
- buttons.forEach(button => {
-     button.addEventListener('click', function() {
-         const serviceName = button.getAttribute('data-target');
-         openPopup(serviceName);
-     });
- });
-
- // Adiciona evento ao botão de fechar do popup
- const closeButtonPopup = document.getElementById("close-popup");
- if (closeButtonPopup) {
-     closeButtonPopup.addEventListener("click", closePopup);
- }
-
+// Função para fechar o popup quando clicar fora do conteúdo
+const popup = document.getElementById("popup");
+if (popup) {
+    popup.addEventListener("click", (e) => {
+        // Verifica se o clique foi no fundo (não no conteúdo)
+        if (e.target === popup) {
+            closePopup(); // Fecha o popup
+        }
+    });
+}
 
 
 
