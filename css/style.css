@@ -5,6 +5,8 @@
     font-family: 'Mukta', sans-serif;
 }
 
+
+
 .email-top a{
    color: #FEFEFEFE;
    display: flex;
@@ -72,10 +74,10 @@ body {
 }
 
 .logo-portaria {
-    height: 200px;
+    height: 300px;
     margin-left: 39%;
     margin-top: 10px;
-    border-radius: 3px;
+    border-radius: 8px;
 }
 
 .caixa-mae button{
@@ -157,7 +159,7 @@ a:hover {
 #close-form {
     position: absolute; /* Posicionamento absoluto dentro da .formulario- */
     top: -32px; /* Distância do topo */
-    right: -20px; /* Distância da borda direita */
+    right: 0px; /* Distância da borda direita */
     background-color: #ff0000; /* Cor de fundo do botão */
     color: white; /* Cor do texto */
     border: none; /* Sem borda */
@@ -277,7 +279,6 @@ a:hover {
 
 /* Efeito hover para os botões */
 .button-services:hover {
-    width: 100px;
     background: linear-gradient(0deg, rgb(52, 52, 198) 0%, rgb(231, 173, 73) 100%);
     transform: scale(1.1);
 }
@@ -313,42 +314,81 @@ a:hover {
     opacity: 1;
 }
 
-/* Estilos do Popup */
+/* Aplicando cor e negrito diretamente para todos os <b> no conteúdo */
+#carouselExampleControls .carousel-item .service-item b,
+.popup-content b {
+    font-weight: bold !important;  
+    color: #12075e !important;
+    font-size: medium;
+}
+
+
+
+#servico-alarme {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+    padding: 12px;
+    white-space: normal;        /* Permite que o texto quebre automaticamente */
+    text-align: left;           /* Alinhamento à esquerda */
+}
+
+
 .popup {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro */
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5); /* Máscara de fundo */
+    z-index: 9999; /* Certifique-se de que o popup está por cima de outros elementos */
 }
 
 .popup-content {
     background-color: white;
     padding: 20px;
-    max-width: 400px;
-    width: 100%;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column; /* Coloca o botão e o texto um abaixo do outro */
-    position: relative; /* Para o botão de fechar ser posicionado dentro do conteúdo */
+    max-width: 600px;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow-y: auto; /* Garante que o texto rolável apareça corretamente */
+    max-height: 80%; /* Evita que o popup ocupe toda a altura da tela */
 }
 
 #close-popup {
-    position: absolute;
+    position: absolute;  /* Fixa o botão no topo do popup */
     top: 10px;
     right: 10px;
     background-color: #ff0000;
-    color: white;
     border: none;
-    padding: 5px 10px;
+    font-size: 20px;
+    color: #fff;
     cursor: pointer;
-    border-radius: 5px;
-    z-index: 10; /* Garante que o botão fique acima do conteúdo */
+    z-index: 10;
 }
+
+#popup-text {
+    font-size: 14px;
+    color: #333;
+}
+
+.service-text.hidden {
+    display: none;
+}
+
+.service-text {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; /* Transição suave */
+}
+
+.service-text:not(.hidden) {
+    opacity: 1; /* Quando não estiver com .hidden, fica visível */
+}
+
 
 #close-popup:hover {
     background-color: #d10000;
@@ -441,13 +481,17 @@ a:hover {
 
     .logo-portaria {
         height: 180px;
-        margin-left: 30%;
+        margin-left: 40%;
     }
 
     .carousel-control-next,
     .carousel-control-prev {
         margin-left: 160px;
         margin-right: -210px;
+    }
+
+    .caixa-mae button{
+        margin-left: 38%;
     }
 
     .carousel-inner {
@@ -463,13 +507,13 @@ a:hover {
     }
 
     .formulario- {
-        top: 10%;
+        top: 35%;
         
     }
 
     #close-form {
-        top: -40px; 
-        right: -20px; 
+        top: -30px; 
+        right: -1px; 
     }
 
 }
@@ -487,9 +531,13 @@ a:hover {
      }
  
      .logo-portaria {
-         height: 150px;
-         margin-left: 30%;
-     }
+        height: 190px;
+        margin-left: 35%;
+    }
+
+    .caixa-mae button {
+        margin-left: 32%;
+    }
  
      .carousel-control-next,
      .carousel-control-prev {
@@ -516,13 +564,13 @@ a:hover {
  
      #close-form {
          top: -32px; 
-         right: -34px; 
+         right: -4px; 
      }
 
 }
 
 /* Responsividade para tablets maiores */
-@media (max-width: 819px) and (min-width: 768px){
+@media (max-width: 819px){
 
     h1 {
         font-size: 22px;
@@ -533,14 +581,20 @@ a:hover {
      }
  
      .logo-portaria {
-         height: 150px;
-         margin-left: 30%;
-     }
+        height: 190px;
+        margin-left: 35%;
+    }
+
+
+     .caixa-mae .text-who {
+        font-size: medium;
+        margin-left: 0px;
+    }
  
      .carousel-control-next,
      .carousel-control-prev {
-         margin-left: 160px;
-         margin-right: -210px;
+         margin-left: 120px;
+         margin-right: -180px;
      }
  
      .carousel-inner {
@@ -562,7 +616,7 @@ a:hover {
  
      #close-form {
          top: -32px;
-         right: -34px; 
+         right: -4px; 
      }
 
      .caixa-mae button {
@@ -572,7 +626,7 @@ a:hover {
 }
 
 /* Responsividade para telas menores */
-@media (max-width: 766px) and (min-width: 684px) {
+@media (max-width: 766px)  {
 
     nav {
         height: 20vh;
@@ -589,8 +643,12 @@ a:hover {
     }
  
     .logo-portaria {
-        height: 120px;
-        margin-left: 10%;
+        height: 150px;
+        margin-left: 35%;
+    }
+
+    .caixa-mae button {
+        margin-left: 25%;   
     }
 
     .caixa-mae .text-inicial {
@@ -631,7 +689,7 @@ a:hover {
 
     #close-form {
         top: -32px; 
-        right: -34px; 
+        right: -4px; 
     }
 }
 
@@ -639,67 +697,215 @@ a:hover {
 
 @media (max-width: 683px) {
 
-    nav {
-        height: 20vh;
-        padding: 10px;
+    .caixa-mae button {
+        margin-left: 15%;   
+    }
+
+    .button-services img {
+        height: 50px;
+    }
+    
+}
+
+
+@media (max-width: 603px) {
+
+    .caixa-mae button {
+        margin-left: 12%;   
+    }
+
+    .button-services img {
+        height: 45px;
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .caixa-mae button {
+        margin-left: 10%;   
+    }
+
+    .button-services img {
+        height: 40px;
+    }
+
+}
+
+@media (max-width: 520px) {
+
+    .whatsapp img {
+        height: 50px;
+    }
+
+    .logo-portaria {
+        margin-left: 25%;
+    }
+    
+    .instagram img {
+        height: 50px;
+    }
+
+    .caixa-mae button {
+        margin-left: 4%;   
+    }
+
+    .button-services img {
+        height: 35px;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        margin-left: 50px;
+        margin-right: -90px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .email-top {
+        font-size: medium;
+    }
+
+    .headLink {
+        font-size: medium;
+    }
+
+    .logo-portaria {
+        margin-left: 15%;
+    }
+
+    .caixa-mae .text-inicial {
+        font-size: small;
+        margin-left: -45px; 
+    }
+
+    .caixa-mae .text-who {
+        font-size: x-small;
+        margin-left: -40px;
+    }
+
+    .caixa-mae button {
+        margin-left: -9%;   
+    }
+
+    .formulario- {
+        left: 30%;
+    }
+
+    #close-form {
+        right: -14px;
+    }
+
+    .button-services img {
+        height: 30px;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        margin-left:60px;
+        margin-right: -80px;
+    }
+
+}
+
+@media (max-width: 429px) {
+
+    .email-top {
+        font-size: small;
+    }
+
+    .headLink {
+        font-size: small;
+    }
+
+    .logo-portaria {
+        margin-left: -2%;
     }
 
     h1 {
         font-size: small;
     }
- 
-    .headImg {
-        margin: 10px;
-        height: 70px;
-    }
- 
-    .logo-portaria {
-        height: 120px;
-        margin-left: 10%;
-    }
 
     .caixa-mae .text-inicial {
         font-size: small;
+        margin-left: -50px; 
     }
 
     .caixa-mae .text-who {
-        font-size: smaller;
+        font-size: x-small;
+        margin-left: -50px;
+    }
+
+    .whatsapp img {
+        height: 40px;
+    }
+    
+    .instagram img {
+        height: 40px;
+    }
+
+    .caixa-mae button {
+        margin-left: -10%;   
     }
 
     .button-services img {
-        height: 60px;
+        height: 25px;
     }
-    
+
     .carousel-control-next,
-     .carousel-control-prev {
-         margin-left: 60px;
-         margin-right: -110px;
-     }
- 
-     .carousel-inner {
-         margin-left: 60px;
-     }
- 
-     .carousel-item {  
-       margin-right: 5px; 
-     }
-
-
-    .video {
-        display: none;
+    .carousel-control-prev {
+        margin-left:60px;
+        margin-right: -70px;
     }
 
-    .video-mobile {
-        display: block;
+    .formulario- {
+        left: 40%;
     }
 
-
-    #close-form {
-        top: -32px; 
-        right: -34px; 
-    }
 }
 
+@media (max-width: 375px) {
+    
+    .logo-portaria {
+        margin-left: -10%;
+    }
 
+    h1 {
+        font-size: x-small;
+    }
+
+    .caixa-mae .text-inicial {
+        font-size: x-small;
+        margin-left: -70px; 
+    }
+
+
+    .caixa-mae .text-who {
+        font-size: x-small;
+        margin-left: -60px;
+    }
+
+    .caixa-mae button {
+        margin-left: -15%;   
+    }
+
+    .button-services img {
+        height: 22px;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        margin-left:60px;
+        margin-right: -60px;
+    }
+
+    .formulario- {
+        left: 40%;
+    }
+
+
+}
 
 
