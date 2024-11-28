@@ -62,14 +62,14 @@ body {
     
 } 
 
-.caixa-mae .text-inicial{
+.text-inicial{
     color: hsla(53, 27%, 87%, 0.996);
     font-size: 25px;
     text-align: -webkit-center;
     margin-top: 30px;
 }
 
-.caixa-mae .text-who {
+.text-who {
     font-size: 18px;
 }
 
@@ -95,9 +95,9 @@ body {
 }
 
 button:hover {
-    background: linear-gradient(0deg, rgb(155, 160, 124) 0%, rgb(143, 161, 222) 100%);
+    background: linear-gradient(0deg, rgba(22,25,22,1) 0%, rgb(231, 173, 73) 100%);
     transition: 0.5s ease-in-out;
-    color: rgb(16, 22, 39)
+    text-decoration: none;
 }
 
 .whatsapp {
@@ -277,11 +277,6 @@ a:hover {
     
 }
 
-/* Efeito hover para os botões */
-.button-services:hover {
-    background: linear-gradient(0deg, rgb(52, 52, 198) 0%, rgb(231, 173, 73) 100%);
-    transform: scale(1.1);
-}
 
 /* Ajuste das imagens dentro dos botões */
 .button-services img {
@@ -586,7 +581,7 @@ a:hover {
     }
 
 
-     .caixa-mae .text-who {
+     .text-who {
         font-size: medium;
         margin-left: 0px;
     }
@@ -626,7 +621,7 @@ a:hover {
 }
 
 /* Responsividade para telas menores */
-@media (max-width: 766px)  {
+@media (max-width: 785px)  {
 
     nav {
         height: 20vh;
@@ -634,49 +629,76 @@ a:hover {
     }
 
     h1 {
-        font-size: small;
+        font-size: large;
     }
  
     .headImg {
-        margin: 10px;
-        height: 70px;
+        
+        height: 130px;
     }
  
     .logo-portaria {
-        height: 150px;
-        margin-left: 35%;
+        height: 280px;
+        margin-left: 25%;
     }
 
     .caixa-mae button {
         margin-left: 25%;   
     }
 
-    .caixa-mae .text-inicial {
-        font-size: small;
+    .text-inicial {
+        font-size: large;
     }
 
-    .caixa-mae .text-who {
-        font-size: smaller;
+    .text-who {
+        font-size: large;
+    }
+
+
+    #carouselExampleControls {
+        width: 70%; 
+        padding: 0 10px; /* Pequeno padding nas laterais */
+    }
+
+    .carousel-inner {
+        margin-left: 200px; /* Remove a margem lateral grande */
+        flex-direction: column; /* Alinha os itens verticalmente */
+        align-items: center;
+    }
+
+    .carousel-item {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        justify-content: center;
+        gap: 20px; /* Espaço entre os itens */
+        margin-right: 0; /* Remove a margem lateral */
+    }
+
+    .carousel-item .service-item {
+        flex: 0 0 auto; /* Permite que os itens não sejam redimensionados */
+        width: 90%; /* Ocupa quase toda a largura */
+        max-width: 300px; /* Largura máxima */
+    }
+
+    .button-services {
+        width: 100%; /* Ocupa toda a largura */
+        margin-bottom: 15px; /* Espaço entre os itens */
     }
 
     .button-services img {
-        height: 60px;
+        height: 200px; /* Aumenta o tamanho da imagem */
+        width: 100%; /* Ocupa toda a largura */
+        object-fit: contain; /* Mantém a proporção da imagem */
     }
-    
-    .carousel-control-next,
-     .carousel-control-prev {
-         margin-left: 60px;
-         margin-right: -110px;
-     }
- 
-     .carousel-inner {
-         margin-left: 60px;
-     }
- 
-     .carousel-item {  
-       margin-right: 5px; 
-     }
 
+    .carousel-control-next {
+        margin-right: -15%;
+        width: 10%;
+    }
+
+    .carousel-control-prev {
+        margin-left: 115px;
+        width: 10%;
+    }
 
     .video {
         display: none;
@@ -697,68 +719,82 @@ a:hover {
 
 @media (max-width: 683px) {
 
+    .logo-portaria {
+        margin-left: 15%;
+    }
+
+    .button-services img {
+        height: 180px;
+    }
+
+    .carousel-inner {
+        margin-left: 160px;
+    }
+
+    .carousel-control-prev {
+        margin-left: 90px;
+    }
+
+    .carousel-control-next {
+        margin-right: -22%;
+    }
+    
+}
+
+
+@media (max-width: 623px) {
+
+
+    .button-services img {
+        height: 150px;
+    }
+    .carousel-inner {
+        margin-left: 150px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .button-services img {
+        height: 140px;
+    }
+
+    .carousel-inner {
+        margin-left: 130px;
+    }
+
+}
+
+@media (max-width: 570px) {
+
+    .logo-portaria {
+        height: 260px;
+        margin-left: 5%;
+    }
+    
+    .caixa-mae {
+        font-size: medium;
+    }
+
+
     .caixa-mae button {
         margin-left: 15%;   
     }
 
     .button-services img {
-        height: 50px;
-    }
-    
-}
-
-
-@media (max-width: 603px) {
-
-    .caixa-mae button {
-        margin-left: 12%;   
+        height: 120px;
     }
 
-    .button-services img {
-        height: 45px;
+    .carousel-inner {
+        margin-left: 70px;
     }
 
-}
-
-@media (max-width: 560px) {
-
-    .caixa-mae button {
-        margin-left: 10%;   
+    .carousel-item {
+        margin-left: 15%;
+        max-width: 250px;
     }
 
-    .button-services img {
-        height: 40px;
-    }
-
-}
-
-@media (max-width: 520px) {
-
-    .whatsapp img {
-        height: 50px;
-    }
-
-    .logo-portaria {
-        margin-left: 25%;
-    }
-    
-    .instagram img {
-        height: 50px;
-    }
-
-    .caixa-mae button {
-        margin-left: 4%;   
-    }
-
-    .button-services img {
-        height: 35px;
-    }
-
-    .carousel-control-next,
-    .carousel-control-prev {
-        margin-left: 50px;
-        margin-right: -90px;
-    }
 
 }
 
@@ -774,20 +810,15 @@ a:hover {
 
     .logo-portaria {
         margin-left: 15%;
+        height: 200px;
     }
 
-    .caixa-mae .text-inicial {
+    .text-inicial, .text-who {
         font-size: small;
         margin-left: -45px; 
     }
-
-    .caixa-mae .text-who {
-        font-size: x-small;
-        margin-left: -40px;
-    }
-
     .caixa-mae button {
-        margin-left: -9%;   
+        margin-left: 5%;
     }
 
     .formulario- {
@@ -798,22 +829,41 @@ a:hover {
         right: -14px;
     }
 
-    .button-services img {
-        height: 30px;
+    .instagram img, .whatsapp img {
+        height: 50px;
     }
 
-    .carousel-control-next,
+    .button-services img {
+        height: 110px;
+    }
+
+    .carousel-inner {
+        margin-left: 50px;
+    }
+
+    .carousel-item {
+        margin-left: 15%;
+        max-width: 250px;
+    }
+
+
+    .carousel-control-next {
+        margin-right: -60px;
+    }
+
     .carousel-control-prev {
-        margin-left:60px;
-        margin-right: -80px;
+        margin-left: 60px;
     }
 
 }
 
-@media (max-width: 429px) {
+@media (max-width: 430px) {
 
     .email-top {
         font-size: small;
+    }
+    .headImg {
+        height: 100px;
     }
 
     .headLink {
@@ -821,47 +871,24 @@ a:hover {
     }
 
     .logo-portaria {
-        margin-left: -2%;
+        margin-left: 0%;
     }
 
     h1 {
         font-size: small;
     }
 
-    .caixa-mae .text-inicial {
+    .text-inicial, .text-who {
         font-size: small;
         margin-left: -50px; 
-    }
-
-    .caixa-mae .text-who {
-        font-size: x-small;
-        margin-left: -50px;
-    }
-
-    .whatsapp img {
-        height: 40px;
-    }
-    
-    .instagram img {
-        height: 40px;
     }
 
     .caixa-mae button {
         margin-left: -10%;   
     }
 
-    .button-services img {
-        height: 25px;
-    }
-
-    .carousel-control-next,
     .carousel-control-prev {
-        margin-left:60px;
-        margin-right: -70px;
-    }
-
-    .formulario- {
-        left: 40%;
+        margin-left: 50px;
     }
 
 }
@@ -869,22 +896,28 @@ a:hover {
 @media (max-width: 375px) {
     
     .logo-portaria {
-        margin-left: -10%;
+        margin-left: -5%;
+        height: 180px;
+    }
+
+    .headImg {
+        height: 70px;
     }
 
     h1 {
-        font-size: x-small;
+        font-size: small;
     }
 
-    .caixa-mae .text-inicial {
-        font-size: x-small;
+    .text-inicial {
+        font-size: small;
         margin-left: -70px; 
     }
 
 
-    .caixa-mae .text-who {
-        font-size: x-small;
-        margin-left: -60px;
+    .text-who {
+        font-size: xx-small;
+        margin-right: 35px;
+       
     }
 
     .caixa-mae button {
@@ -892,20 +925,28 @@ a:hover {
     }
 
     .button-services img {
-        height: 22px;
-    }
-
-    .carousel-control-next,
-    .carousel-control-prev {
-        margin-left:60px;
-        margin-right: -60px;
+        height: 90px;
     }
 
     .formulario- {
         left: 40%;
     }
 
+    .carousel-inner {
+        margin-left: 50px;
+    }
 
+    .carousel-item {
+        margin-left: 15%;
+        max-width: 160px;
+    }
+
+
+    .carousel-control-next {
+        margin-right: -35px;
+    }
+
+    .carousel-control-prev {
+        margin-left: 80px;
+    }
 }
-
-
