@@ -1,7 +1,7 @@
-#🌟 Projeto Elitte Group
+🌟 #Projeto Elitte Group
 Site institucional desenvolvido para a empresa Elitte Group, com foco em responsividade, performance e adaptação visual para diferentes dispositivos.
 
-#📄 Descrição do Projeto
+📄 #Descrição do Projeto
 Este site foi criado com HTML5, CSS3 e um pouco de JavaScript puro para adicionar dinamicidade em pontos chave:
 
 - Troca automática de vídeos de fundo (desktop x mobile).
@@ -12,7 +12,7 @@ Este site foi criado com HTML5, CSS3 e um pouco de JavaScript puro para adiciona
 
 - Além da entrega do projeto, o desenvolvimento proporcionou domínio de técnicas avançadas de responsividade e manipulação de carrossel.
 
-#🎯 Funcionalidades Implementadas
+🎯 #Funcionalidades Implementadas
 - Vídeos diferentes para desktop e mobile, otimizados para cada tipo de tela.
 
 - Layout 100% responsivo, projetado para oferecer fluidez e desempenho em qualquer dispositivo.
@@ -23,20 +23,20 @@ Este site foi criado com HTML5, CSS3 e um pouco de JavaScript puro para adiciona
 
 - Design moderno alinhado à identidade visual da marca.
 
-#💻 Tecnologias Utilizadas
+💻 #Tecnologias Utilizadas
 HTML5
 
 CSS3
 
 JavaScript (nativo)
 
-#🚀 (A versão final completa ainda aguarda o servidor de e-mails do cliente ficar disponível.)
+🚀 #(A versão final completa ainda aguarda o servidor de e-mails do cliente ficar disponível.)
 
 https://elittegroup.com.br/  - Site Oficial
 
 https://elittegroup.vercel.app/ - Versão hospedada na Vercel
 
-#🖼️ Prints do Projeto
+🖼️ #Prints do Projeto
 #Página Inicial
 <img width="1680" alt="telaInicio" src="https://github.com/user-attachments/assets/9e7972c5-5e7b-42e9-a4f0-53f604db4a06" />
 #Envio de e-mail personalizado
@@ -48,7 +48,7 @@ https://elittegroup.vercel.app/ - Versão hospedada na Vercel
 #Tela de demonstrativo dos serviços (modal)
 <img width="1680" alt="demonstrativoServicos" src="https://github.com/user-attachments/assets/896f32b6-f5c6-4620-816c-e2df25fdbeab" />
 
-#📚 Aprendizados
+📚 #Aprendizados
 - Domínio avançado de responsividade pura (sem frameworks).
 
 - Gerenciamento e troca de vídeos de fundo de acordo com o dispositivo.
@@ -58,7 +58,7 @@ https://elittegroup.vercel.app/ - Versão hospedada na Vercel
 - Desenvolvimento de habilidades de comunicação técnica, ao ponto de explicar conceitos de carrossel e responsividade a outros desenvolvedores em estudo.
   
 
-#🛠️ Como rodar localmente 
+🛠️ #Como rodar localmente 
 
 git clone https://github.com/vinizanotti89/elittegroup.git
 
