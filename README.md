@@ -30,28 +30,23 @@ CSS3
 
 JavaScript (nativo)
 
-#🚀 Link do projeto publicado (Ainda falta o servidor de e-mails do cliente ficar pronto para subir a última versão)
-https://elittegroup.com.br/
+#🚀 (A versão final completa ainda aguarda o servidor de e-mails do cliente ficar disponível.)
 
-Vercel (Versão completa)
-https://elittegroup.vercel.app/
+https://elittegroup.com.br/  - Site Oficial
+
+https://elittegroup.vercel.app/ - Versão hospedada na Vercel
 
 #🖼️ Prints do Projeto
 #Página Inicial
 <img width="1680" alt="telaInicio" src="https://github.com/user-attachments/assets/9e7972c5-5e7b-42e9-a4f0-53f604db4a06" />
-
-#Envio de e-mail personalizado ao clicar no e-mail ao topo, já abre a caixa de e-mail configurada como padrão no computador
+#Envio de e-mail personalizado
 <img width="1409" alt="email" src="https://github.com/user-attachments/assets/aeae0efd-120f-478a-9243-e3c1307f0415" />
-
-#Carrossel telas grandes (Horizontal)
-<img width="1668" alt="carrossel1" src="https://github.com/user-attachments/assets/019f9f98-8e15-40e1-a43a-6ca2cf17de55" />
-<img width="1680" alt="carrossel2" src="https://github.com/user-attachments/assets/dec4d313-1f4d-49f7-a1f4-fa269806cbd6" />
-
-#Carrossel telas pequenas (Vertical)
+#Carrossel em Telas Grandes (Horizontal)
+<img width="1668" alt="carrossel1" src="https://github.com/user-attachments/assets/019f9f98-8e15-40e1-a43a-6ca2cf17de55" /> <img width="1680" alt="carrossel2" src="https://github.com/user-attachments/assets/dec4d313-1f4d-49f7-a1f4-fa269806cbd6" />
+#Carrossel em Telas Pequenas (Vertical)
 <img width="547" alt="carrosselVertical" src="https://github.com/user-attachments/assets/efeff4ba-3f2e-4205-b7f8-294b2c10ca66" />
-
-#Tela de demonstrativo dos serviços prestados (Ao clicar fora da tela ele se fecha também), com detalhamento e barra de rolagem
-<img width="1680" alt="carrosselVertical" src="https://github.com/user-attachments/assets/896f32b6-f5c6-4620-816c-e2df25fdbeab" />
+#Tela de demonstrativo dos serviços (modal)
+<img width="1680" alt="demonstrativoServicos" src="https://github.com/user-attachments/assets/896f32b6-f5c6-4620-816c-e2df25fdbeab" />
 
 #📚 Aprendizados
 - Domínio avançado de responsividade pura (sem frameworks).
